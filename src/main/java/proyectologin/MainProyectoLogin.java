@@ -119,6 +119,7 @@ public class MainProyectoLogin {
 	
 		BaseDatos baseDatos = new BaseDatos();
 		
+		
 		do {
 
 			// 1 mostramos el menú
@@ -129,9 +130,25 @@ public class MainProyectoLogin {
 			switch (opcion) {
 			case 1:
 				
+				//TODO haced el listado de los usuarios haciendo uso del método obtenerListaUsuarios
+				//baseDatos.obtenerListaUsuarios();
 				 break;
 
-			case 2:
+			case 2://LOGIN
+				String nombre = pedirNombre();
+				String pwd = pedirPwd();
+				try {
+					Usuario u = baseDatos.login(nombre, pwd);
+					if (u!=null)
+					{
+						System.out.println(u);
+					} else {
+						System.out.println("usuario incorrecto pwd o nombre mal");
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 				
 				break;

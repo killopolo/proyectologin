@@ -15,6 +15,12 @@ public class BaseDatos {
 	private static final String CONTRASENIA_BD = "nrmnct29";
 	
 	static {
+		
+		//esta sección es como para iniciaizar la clase y se puede usar
+		//cuando se necesite. las instrucciones que metamos aquí en la sección
+		//static se ejecutan automáticamente cuando aparece por primera vez
+		//el nombre en el codigo
+		System.out.println("estamos en la sección static");
 	
 		try {
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
@@ -24,6 +30,10 @@ public class BaseDatos {
 		}
 	}
 	
+	public BaseDatos() {
+		// TODO Auto-generated constructor stub
+		System.out.println("pasa por el constructor");
+	}
 	
 
 	
